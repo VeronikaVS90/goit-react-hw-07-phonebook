@@ -6,18 +6,21 @@ import {
   DeleteButton,
 } from './ContactListItems.styled';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/operations';
 
 export const ContactListItems = ({ id, name, number }) => {
   const dispatch = useDispatch();
-  const contactsDelete = id => dispatch(deleteContact(id));
 
   return (
     <ConctactListItem id={id}>
       <ContactName>{name}</ContactName>
       <ContactNumber>{number}</ContactNumber>
 
-      <DeleteButton type="submit" onClick={() => contactsDelete(id)}>
+      <DeleteButton
+        type="submit"
+        aria-label="Delete contact"
+        onClick={() => dispatch(deleteContact(id))}
+      >
         Delete
       </DeleteButton>
     </ConctactListItem>
