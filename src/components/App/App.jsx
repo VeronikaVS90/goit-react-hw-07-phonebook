@@ -8,9 +8,9 @@ import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/api';
 import { getContacts, getStatus } from 'redux/selectors';
-import { STATUS } from 'redux/constants';
+import { STATUS } from 'redux/status';
 const { IDLE, PENDING, REJECTED } = STATUS;
 
 export const App = () => {
